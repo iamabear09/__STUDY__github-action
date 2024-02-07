@@ -1,12 +1,11 @@
 name: "Github action playground"
 
 on:
-  push:
-  workflow_dispatch:
+  milestone:
 
 jobs:
   print-something:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ fromJSON('["ubuntu-latest", "self-hosted"]')}}
+      - run: echo "mile stone event occur
 
