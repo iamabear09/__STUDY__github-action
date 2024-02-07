@@ -1,6 +1,7 @@
 name: "Github action playground"
 
 on:
+  workflow_dispatch
   milestone:
 
 jobs:
