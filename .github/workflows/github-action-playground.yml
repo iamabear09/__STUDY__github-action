@@ -7,5 +7,5 @@ jobs:
   print-something:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "mile stone event occur
+      - run: echo "mile stone event occur"
 
