@@ -10,3 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: docker version
+      - run: docker-compose version
