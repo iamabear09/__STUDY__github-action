@@ -1,0 +1,12 @@
+name: "Github action playground"
+
+on:
+  push:
+  workflow_dispatch:
+  milestone:
+
+jobs:
+  print-something:
+    runs-on: ubuntu-latest
+    steps:
+      - run: docker version
