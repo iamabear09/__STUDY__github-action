@@ -1,4 +1,4 @@
-name: "Github action playground"
+name: "docker test"
 
 on:
   push:
