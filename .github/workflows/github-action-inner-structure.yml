@@ -1,0 +1,49 @@
+name: Java CI with Gradle
+
+on: [push, workflow_dispatch, issues]
+
+env:
+  DB_URL: ${{ secrets.DbUrl }}
+  DB_USER: ${{ secrets.DbUser }}
+  DB_PW: ${{ secrets.DbPassword }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first check pwd
+        run: |
+          echo $(pwd)
+          ls $(ls ./)
+          cat "${GITHUB_ENV}"
+
+      - name: check env variable
+        run: |
+          echo "${DB_URL}"
+          echo "${DB_USER}"
+          echo "${DB_PW}"
+          cat "${GITHUB_ENV}"
+
+
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      # working dir 와 그 내부에 파일이 어떻게 생성되는지 부터 확인해보자.
+      - name: second check pwd
+        run: |
+          echo $(pwd)
+          ls $(ls ./)
+          cat "${GITHUB_ENV}"
+        
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+#
+#      - name: Build with Gradle Wrapper
+#        run: ./gradlew build

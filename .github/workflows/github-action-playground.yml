@@ -1,0 +1,12 @@
+name: "Github action playground"
+
+on:
+  workflow_dispatch:
+  milestone:
+
+jobs:
+  print-something:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "mile stone event occur"
+

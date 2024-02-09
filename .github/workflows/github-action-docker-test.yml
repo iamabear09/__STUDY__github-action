@@ -1,0 +1,13 @@
+name: "docker test"
+
+on:
+  push:
+  workflow_dispatch:
+  milestone:
+
+jobs:
+  print-something:
+    runs-on: ubuntu-latest
+    steps:
+      - run: docker version
+      - run: docker-compose version
